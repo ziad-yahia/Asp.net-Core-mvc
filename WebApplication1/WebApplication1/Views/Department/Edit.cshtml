@@ -1,0 +1,14 @@
+﻿@model Department;
+
+<form method="post" asp-controller="Department" asp-action="SaveEdit" asp-route-id="@Model.Id">
+
+    <div>
+        <label for="Name">Department Name</label>
+        <input type="text" id="Name" name="Name" value="@Model.Name" class="form-control" />
+    </div>
+    <div>
+        <label for="Name">Manger Name</label>
+        <input type="text" id="MangerName" name="MangerName" value="@Model.MangerName" class="form-control" />
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>

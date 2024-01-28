@@ -1,0 +1,46 @@
+﻿@model List<Employee>
+
+<h1>Employee Index</h1>
+<a class="btn btn-primary" asp-action="Create" >Create New Employee</a>
+<br />
+
+
+<table class="table table-bordered table-hover">
+
+    <thead>
+        <tr>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>Employee DOB</th>
+            <th>Employee Hiring Date</th>
+            <th>Employee Gross Salary</th>
+            <th>Employee Net salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+       
+            @foreach (var item in Model)
+            { 
+                <tr>
+                    <td>@item.EmployeeNumber</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.DOB</td>
+                    <td>@item.HiringDate</td>
+                    <td>@item.GrossSalary</td>
+                    <td>@item.NetSalary</td>
+                     <td>
+                    <a asp-controller="Employee" asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a>
+
+                    <a asp-controller="Employee" asp-action="Delete" alert("want delete that record") asp-route-id="@item.EmployeeId">Delete</a>
+                     </td>
+                 </tr>
+            }
+            
+        
+    </tbody>
+
+</table>
+
+

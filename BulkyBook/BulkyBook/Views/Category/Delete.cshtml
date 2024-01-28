@@ -1,0 +1,48 @@
+﻿@model Category
+
+<form method="post" asp-action="Delete" asp-controller="Category">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Category</h2>
+            <hr />
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" disabled class="form-control" />
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Displayorder" class="form-label"></label>
+                <input asp-for="Displayorder" disabled class="form-control" />
+                <span class="text-danger" asp-validation-for="Displayorder"></span>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" onclick="Caution()"> Delete</button>
+                <a asp-action="Index" asp-controller="category" class="btn btn-secondary">Go Back To List</a>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script>
+
+        function Caution() {
+
+            var message = confirm("Are You Sure You Want To Delete That Element");
+
+            if (message == false) {
+
+                event.preventDefault();
+
+            }
+
+        }
+    </script>
+}

@@ -1,0 +1,14 @@
+﻿@model Department;
+<form method="get" asp-action="saveit" asp-controller="Department">
+
+    <div>
+        <label >Name</label>
+        <input type="text" id="Name" name="Name" value="@Model.Name" />
+    </div>
+    <div>
+        <label>MangerName</label>
+        <input type="text" id="MangerName" name="MangerName" value="@Model.MangerName" />
+    </div>
+
+    <input type="submit" name="save" value="Submit" />
+</form>
